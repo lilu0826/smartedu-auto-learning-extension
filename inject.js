@@ -207,7 +207,6 @@ if (window.Vue) {
                         if (state != "3") {
                             let recordValue = 0;
                             while (recordValue != 1) {
-                                await delay(1000 * 45);
                                 recordValue = await recordStudyProcess({
                                     courseId: courseId, //课程ID
                                     chapterId: chapterId, //章节ID
@@ -215,6 +214,7 @@ if (window.Vue) {
                                     studyTime: parseInt(videoTime), //观看时间 parseInt(videoTime) + 1
                                     state: "2", // 当前状态
                                 });
+                                await delay(1000 * 45);
                             }
                         }
                     }
