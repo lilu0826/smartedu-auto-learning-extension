@@ -213,7 +213,7 @@ if (window.Vue) {
                                     chapterId: chapterId, //章节ID
                                     subsectionId: subsectionId, // 子节点ID
                                     studyTime: parseInt(videoTime), //观看时间 parseInt(videoTime) + 1
-                                    state: "2", // 当前状态
+                                    state: "1", // 当前状态
                                 });
                             }
                         }
