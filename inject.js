@@ -19,7 +19,7 @@ function exposeLibs(runtime) {
 
         const candidate = exp.default || exp;
 
-        if (candidate && candidate.version) {
+        if (candidate) {
             console.log("candidate", id, exp);
         }
 
@@ -29,7 +29,8 @@ function exposeLibs(runtime) {
             candidate &&
             candidate.get &&
             candidate.post &&
-            candidate.defaults
+            candidate.defaults && 
+            candidate.defaults.baseURL
         ) {
             exportsMap.axios = candidate;
         }
@@ -76,7 +77,7 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function getCourseDetails(param) {
     const res = await axios({
-        url: "/studyCourse/getCourseDetails?courseId=" + param,
+        url: "studyCourse/getCourseDetails?courseId=" + param,
         method: "get",
     });
     return res.returnData;
